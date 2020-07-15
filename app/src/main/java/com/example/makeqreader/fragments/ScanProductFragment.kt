@@ -50,6 +50,7 @@ class ScanProductFragment : Fragment() {
         super.onPause()
         camera_view.stop()
     }
+
     private fun getQRCodeDetails(bitmap: Bitmap, context: Context) {
 
         val options = FirebaseVisionBarcodeDetectorOptions.Builder()

@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_destination_home_to_scanProductFragment"
             app:destination="@id/destination_scan" />
+        <action
+            android:id="@+id/action_destination_home_to_productListFragment"
+            app:destination="@id/destination_product_list" />
     </fragment>
     <fragment
         android:id="@+id/destination_scan"
         android:name="com.example.makeqreader.fragments.ScanProductFragment"
         android:label="fragment_scan_product"
         tools:layout="@layout/fragment_scan_product" />
+    <fragment
+        android:id="@+id/destination_product_list"
+        android:name="com.example.makeqreader.fragments.ProductListFragment"
+        android:label="fragment_product_list"
+        tools:layout="@layout/fragment_product_list" />
 </navigation>
