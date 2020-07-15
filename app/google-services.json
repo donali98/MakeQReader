@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "136643681177",
+    "firebase_url": "https://qreader-9ee10.firebaseio.com",
+    "project_id": "qreader-9ee10",
+    "storage_bucket": "qreader-9ee10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136643681177:android:61d2c439ea5e6d06461108",
+        "android_client_info": {
+          "package_name": "com.dona.qreader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136643681177-c20332umiu9b36pbj0biov7b7nqt874i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxnh1lMcR4fOth2S97t25SHCpPE_T2eDw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136643681177-c20332umiu9b36pbj0biov7b7nqt874i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136643681177:android:ae645192a4e52731461108",
+        "android_client_info": {
+          "package_name": "com.example.makeqreader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136643681177-c20332umiu9b36pbj0biov7b7nqt874i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxnh1lMcR4fOth2S97t25SHCpPE_T2eDw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136643681177-c20332umiu9b36pbj0biov7b7nqt874i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
