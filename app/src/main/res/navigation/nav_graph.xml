@@ -9,5 +9,14 @@
         android:id="@+id/destination_home"
         android:name="com.example.makeqreader.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_destination_home_to_scanProductFragment"
+            app:destination="@id/destination_scan" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination_scan"
+        android:name="com.example.makeqreader.fragments.ScanProductFragment"
+        android:label="fragment_scan_product"
+        tools:layout="@layout/fragment_scan_product" />
 </navigation>
