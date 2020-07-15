@@ -61,17 +61,17 @@ class ScanProductFragment : Fragment() {
         detector.detectInImage(image)
             .addOnSuccessListener {
                 for (firebaseBarcode in it) {
-//                    val nextAction = ScanProductFragmentDirections.nextAction(firebaseBarcode.displayValue!!)
-//                    Navigation.findNavController(camera_view).navigate(nextAction)
-//                    when (firebaseBarcode.valueType) {
-//                        //Handle the URL here
-//                        FirebaseVisionBarcode.TYPE_URL -> firebaseBarcode.url
-//                        // Handle the contact info here, i.e. address, name, phone, etc.
-//                        FirebaseVisionBarcode.TYPE_CONTACT_INFO -> firebaseBarcode.contactInfo
-//                        // Handle the wifi here, i.e. firebaseBarcode.wifi.ssid, etc.
-//                        FirebaseVisionBarcode.TYPE_WIFI -> firebaseBarcode.wifi
-//                        //Handle more type of Barcodes
-//                    }
+                    val nextAction = ScanProductFragmentDirections.nextAction(firebaseBarcode.displayValue!!)
+                    Navigation.findNavController(camera_view).navigate(nextAction)
+                    when (firebaseBarcode.valueType) {
+                        //Handle the URL here
+                        FirebaseVisionBarcode.TYPE_URL -> firebaseBarcode.url
+                        // Handle the contact info here, i.e. address, name, phone, etc.
+                        FirebaseVisionBarcode.TYPE_CONTACT_INFO -> firebaseBarcode.contactInfo
+                        // Handle the wifi here, i.e. firebaseBarcode.wifi.ssid, etc.
+                        FirebaseVisionBarcode.TYPE_WIFI -> firebaseBarcode.wifi
+                        //Handle more type of Barcodes
+                    }
                 }
 
             }.addOnFailureListener {
