@@ -11,6 +11,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.*
 
+//Interface that defines each api request
 interface ProductService {
     @GET("/api/items")
     fun getProducts(): Deferred<Response<ProductResponse>>

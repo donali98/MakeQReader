@@ -33,7 +33,6 @@ class ProductListFragment : Fragment() {
                 val nextAction = ProductListFragmentDirections.nextAction(product.id)
                 Navigation.findNavController(itemView).navigate(nextAction)
             }
-
         }
         productListViewModel = ViewModelProvider(this).get(ProductListViewModel::class.java)
         productListViewModel.productList.observe(this, Observer {products->

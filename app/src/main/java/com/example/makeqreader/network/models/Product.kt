@@ -2,6 +2,7 @@ package com.example.makeqreader.network.models
 
 import com.squareup.moshi.Json
 
+//Class defining product structure
 class Product(
     @field:Json(name = "_id")
     val id:String,

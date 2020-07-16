@@ -6,6 +6,7 @@ import com.example.makeqreader.network.models.SingleProductResponse
 import kotlinx.coroutines.Deferred
 import retrofit2.Response
 
+//Class repository that will be called from the ViewModel Classes
 class ProductRepository {
     fun getProductsAsync(): Deferred<Response<ProductResponse>> =
         ProductService.getProductService().getProducts()

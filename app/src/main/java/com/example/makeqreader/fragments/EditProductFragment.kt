@@ -30,14 +30,18 @@ import java.lang.Exception
  * create an instance of this fragment.
  */
 class EditProductFragment : Fragment() {
+    //Arguments received from the navigation component
     private lateinit var args: EditProductFragmentArgs
+    //ViewModel for this fragment
     private lateinit var updateProductViewModel:ProductUpdateViewModel
+    //Firebase ref
     private val storage = Firebase.storage
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         args =
             EditProductFragmentArgs.fromBundle(this.requireArguments())
+        /* Retrieving  the item info from the arguments and filling the UI fields*/
         updateProductViewModel = ViewModelProvider(this).get(ProductUpdateViewModel::class.java)
         updateProductViewModel.retreiveProductFromApi(args.productId)
         updateProductViewModel.updatedProduct.observe(this, Observer {
@@ -52,6 +56,7 @@ class EditProductFragment : Fragment() {
                 }
             }
         })
+        //Observer that will be triggered after an update is succeeded
         updateProductViewModel.productUpdatedId.observe(this, Observer {
             if(it!=null && it.isNotEmpty()){
                 try{
@@ -74,10 +79,12 @@ class EditProductFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+       //Click listeners for each button
         bt_select_image.setOnClickListener{openGalleryIntent()}
         bt_update_product.setOnClickListener {
             try{
                 if(!areInputsNotEmpty()){
+                    //Saving product info and uploading image to Firebase
                     if(iv_edit_photo.drawable!= null)
                         uploadImageFromImageViewToFirebase(args.productId)
                     updateProductViewModel.updateProduct(
@@ -97,11 +104,12 @@ class EditProductFragment : Fragment() {
             }
         }
     }
-
+    //Method that will be called after selection of image
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1 && resultCode == Activity.RESULT_OK) fillImageViewFromIntent(data!!)
     }
+    //Function for opening selection image activity
     private fun openGalleryIntent() {
         val intent = Intent()
         intent.setType("image/*")
@@ -117,8 +125,10 @@ class EditProductFragment : Fragment() {
         iv_edit_photo.buildDrawingCache()
         iv_edit_photo.setImageBitmap(bitmap)
     }
+    //Checking if inputs are empty
     private fun areInputsNotEmpty(): Boolean =
         til_edit_name.editText!!.text.isEmpty() && til_edit_description.editText!!.text.isEmpty() && til_edit_quantity.editText!!.text.isEmpty()
+
     //Function for uploading the image contained in imageView to FireBase Cloud Storage
     private fun uploadImageFromImageViewToFirebase(productId:String) {
         val photoRef = storage.reference.child("photos/$productId.png")
